@@ -29,21 +29,25 @@ all_links = get_all_links(url)
 
 # Function to visit all URLs and extract contents of <div> with id="individual"
 def extract_individual_content(input_list):
+
     all_content = []
 
     # Loop over all the links
-    for url in input_list:
+    for input in input_list:
+        new_url = root_url + input
+        # print(new_url + "1")
         try:
             # Fetch the content of each URL
-            response = requests.get((root_url + url))
+            response = requests.get(str(new_url))
 
             # If the request is successful
             if response.status_code == 200:
                 # Parse the HTML content of the page
                 soup = BeautifulSoup(response.content, 'html.parser')
-
+                print(soup)
                 # Find the <div> element with id="individual"
-                individual_div = soup.find('div', id='individual')
+                individual_div = soup.find('div', class_='individual')
+                print(new_url)
                 print(individual_div)
 
                 if individual_div:
@@ -55,15 +59,15 @@ def extract_individual_content(input_list):
                     all_content.append(str(individual_div))
 
             else:
-                print(f"Failed to retrieve {url}. Status code: {response.status_code}")
+                print(f"Failed to retrieve {input}. Status code: {response.status_code}")
         
         except Exception as e:
-            print(f"An error occurred while processing {url}: {e}")
+            print(f"An error occurred while processing {input}: {e}")
 
     return all_content
 
 get_all_links(url)
-new_all_links = [link for link in all_links if "/" in link]
+new_all_links = list(set([link for link in all_links if "/" in link]))
 print (new_all_links)
 
 content_from_individual = extract_individual_content(new_all_links)
