@@ -27,7 +27,8 @@ def extract_individual_content(input_list, category):
               "category": "",
               "description": "",
               "image": "",
-              "alt-text": "",}
+              "alt-text": "",
+              "filename": ""}
 
     # Loop over all the links
     for input in input_list:
@@ -50,17 +51,21 @@ def extract_individual_content(input_list, category):
                         img_src = img_tag['src']
                         parsed_url = urlparse(img_src)
                         artist["name"] = img_tag['title']
+                        artist["filename"] = artist["name"].replace(" ", "_").lower() + ".html"
                         artist["image"] = os.path.basename(parsed_url.path)
                         artist["category"] = category
-                        img_tag.decompose()  # Removes the <img> tag
-                        for br in individual_div.find_all(text=True):
-                            if '\n' in br:
-                                br.replace_with(br.replace('\n', '<br>'))
+                        img_tag.decompose()
+                        # for br in individual_div.find_all(text=True):
+                        #     if '\n' in br:
+                        #         br.replace_with(br.replace('\n', '<br>'))
                         artist["description"] = str(individual_div)
+                    filepath = "./artist_pages/" + artist["filename"]
 
                     # Append the remaining HTML content of the div to the list
                     with open("output.csv", "a") as file:
-                        file.write(f"{artist['name']},{artist['category']},{artist['image']},\"{artist['description']}\"\n")
+                        file.write(f"{artist['name']},{artist['category']},{artist['image']}\n")
+                    with open(filepath, 'w') as file:
+                        file.write(artist["description"])
                     all_content.append(str(individual_div))
 
             else:
