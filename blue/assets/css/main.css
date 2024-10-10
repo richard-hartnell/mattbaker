@@ -5165,3 +5165,10 @@ input, select, textarea {
 		transform: translateX(0);
 		visibility: visible;
 	}
+
+/* CUSTOM CSS */
+
+.content .artist {
+	 text-align: left;
+	 padding-bottom: 2em;
+}
