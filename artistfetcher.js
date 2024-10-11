@@ -16,8 +16,7 @@ function addArtist(artist, side, column) {
     let artistTemplate = `
         <div class="artist">
             <h4>${artistName}</h4>
-            ${artistByline}
-            <p><span class="image ${side}"><img src="../images/${artistImage}" alt="${altText}" /></span>${artistBio}</p>
+            <p><span class="image ${side}"><img src="../images/${artistImage}" alt="${altText}" /></span>${artistByline}</p><br><br>
         </div>
     `;
     if (column == 'left') {
@@ -36,25 +35,29 @@ function fetchArtistSheet(url) {
                 artists = results.data;
                 let column;
                 for (let artist of artists) {
-                    if (counter[1] >= counter[0]) {
-                        column = 'left';
-                        if (counter[0] % 2 != 0) {
-                            side = 'left';
-                            counter[0]++;
+                    if (artist[0] != "ARTIST") {
+                        if (counter[1] >= counter[0]) {
+                            column = 'left';
+                            if (counter[0] % 2 != 0) {
+                                side = 'left';
+                                counter[0]++;
+                            } else {
+                                side = 'right';
+                                counter[0]++;
+                            }
                         } else {
-                            side = 'right';
-                            counter[0]++;
+                            column = 'right';
+                            if (counter[1] % 2 != 0) {
+                                side = 'left';
+                                counter[1]++;
+                            } else {
+                                side = 'right';
+                                counter[1]++;
+                            }
                         }
-                    } else {
-                        column = 'right';
-                        if (counter[1] % 2 != 0) {
-                            side = 'left';
-                        } else {
-                            side = 'right';
+                        if (artist) { // [7] && artist[7].trim() === 'TRUE'
+                            addArtist(artist, side, column);
                         }
-                    }
-                    if (artist) { // [7] && artist[7].trim() === 'TRUE'
-                        addArtist(artist, side, column);
                     }
                 }
 
