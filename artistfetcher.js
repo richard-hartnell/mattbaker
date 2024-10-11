@@ -1,30 +1,30 @@
 const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSk0TXnFkfUp5eu3HR6vAQVnyoT4LC2GtXr3zuiW0S6R2X4o7XRtXNlJOEeAQMkA5h3DljXEjAn5biQ/pub?output=csv';
 let artists = [];
-let counter = 0;
-let lazy = false;
-let allShows = [];
-let showSection = '';
+let counter = [0,0];
+let artistsLeft = [];
+let artistsRight = [];
+let artistSection = '';
+let side = '';
 
-function addArtist(show, lazy) {
-    let showName = show[0];
-    let showWeekday = show[1];
-    let showTime = show[2];
-    let showDate = show[3];
-    let showDesc = show[4];
-    let showImage = show[5];
-    let showAltText = show[6];
-    let lazyTag = '';
-    if (lazy) {
-        lazyTag = 'loading="lazy"';
-    }
-    let showTemplate = `
+function addArtist(artist, side, column) {
+    let artistName = artist[0];
+    let artistByline = artist[1];
+    let artistCategory = artist[2];
+    let artistBio = artist[3];
+    let artistImage = artist[4];
+    let altText = artist[5];
+    let artistTemplate = `
         <div class="artist">
             <h4>${artistName}</h4>
             ${artistByline}
-            <p><span class="image ${side}"><img src="images/${artistImage}" alt="" /></span>${artistBio}</p>
+            <p><span class="image ${side}"><img src="../images/${artistImage}" alt="${altText}" /></span>${artistBio}</p>
         </div>
     `;
-    allShows.push(showTemplate);
+    if (column == 'left') {
+        artistsLeft.push(artistTemplate)
+    } else {
+        artistsRight.push(artistTemplate)
+    }
 }
 
 function fetchArtistSheet(url) {
@@ -34,26 +34,48 @@ function fetchArtistSheet(url) {
         Papa.parse(data, {
             complete: function(results) {
                 artists = results.data;
+                let column;
                 for (let artist of artists) {
-                    if (counter > 3 && !lazy) {
-                        lazy = true;
+                    if (counter[1] >= counter[0]) {
+                        column = 'left';
+                        if (counter[0] % 2 != 0) {
+                            side = 'left';
+                            counter[0]++;
+                        } else {
+                            side = 'right';
+                            counter[0]++;
+                        }
+                    } else {
+                        column = 'right';
+                        if (counter[1] % 2 != 0) {
+                            side = 'left';
+                        } else {
+                            side = 'right';
+                        }
                     }
-                    if (artist[7] && artist[7].trim() === 'TRUE') {
-                        addShow(artist, lazy);
+                    if (artist) { // [7] && artist[7].trim() === 'TRUE'
+                        addArtist(artist, side, column);
                     }
-                    counter++;
                 }
 
-                artistsSection = `
-                <h1>HEADLINE?</h1>
-                ${allShows.join('\n')}
+                let artistsSection = `
+                    <div class="col-6 col-12-medium"  id="artist-column-one">
+                        ${artistsLeft}
+                    </div>
+                    <div class="col-6 col-12-medium" id="artist-column-two">
+                        ${artistsRight}
+                    </div>
+                </div>
                 `;
 
-                document.getElementById('music-wrapper').innerHTML = artistsSection;
+                document.getElementById('artistsSection').innerHTML = artistsSection;
             }
         });
     })
-    .catch(error => console.error('Error fetching the Google Sheet:', error));
+    .catch(error => console.error('Error fetching the Google Shefetet:', error));
 }
 
 fetchArtistSheet(url);
+
+// artist-column-one
+// artist-column-two
