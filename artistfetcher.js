@@ -72,7 +72,7 @@ function fetchArtistSheet(url) {
             }
         });
     })
-    .catch(error => console.error('Error fetching the Google Shefetet:', error));
+    .catch(error => console.error('Error fetching the Google Sheet:', error));
 }
 
 fetchArtistSheet(url);
