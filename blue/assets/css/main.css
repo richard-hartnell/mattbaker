@@ -5170,5 +5170,9 @@ input, select, textarea {
 
 .content .artist {
 	 text-align: left;
-	 padding-bottom: 2em;
+	 padding-bottom: 4em;
+}
+
+.content .artist img {
+	padding-bottom: 2em;
 }
