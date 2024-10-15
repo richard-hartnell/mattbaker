@@ -10,9 +10,9 @@ function addArtist(artist, side, column) {
     let artistName = artist[0];
     let artistByline = artist[1];
     let artistCategory = artist[2];
-    let artistBio = artist[3];
-    let artistImage = artist[4];
-    let altText = artist[5];
+    let artistBio;
+    let artistImage = artist[3];
+    let altText = artist[4];
     let artistTemplate = `
         <div class="artist">
             <h4>${artistName}</h4>
