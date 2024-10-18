@@ -5172,7 +5172,7 @@ input, select, textarea {
 	 text-align: left;
 	 padding-bottom: 4em;
 	 background: beige;
-	 min-height: 15em;
+	 height: 20em;
 	 padding-left: 1em;
 	 padding-right: 1em;
 	 border: 2px double black;
@@ -5180,6 +5180,6 @@ input, select, textarea {
 
 .content .artist img {
 	position: relative;
-	padding-bottom: 2em;
-	max-height: 50%;
+	/* height: 15em; */
+	/* width: auto; */
 }
