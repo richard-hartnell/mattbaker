@@ -55,7 +55,8 @@ function fetchArtistSheet(url) {
                                 counter[1]++;
                             }
                         }
-                        if (artist) { // [7] && artist[7].trim() === 'TRUE'
+                        if (artist) {                            
+                            // [7] && artist[7].trim() === 'TRUE'
                             // add coniditional here for category check if in a subcat
                             addArtist(artist, side, column);
                         }
