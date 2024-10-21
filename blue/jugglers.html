@@ -10,6 +10,9 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+		<meta http-equiv="Pragma" content="no-cache">
+
 	</head>
 	<body class="is-preload">
 
@@ -40,18 +43,17 @@
 				<!-- Section -->
 					<section id="one" class="main alt">
 						<header class="accent1">
-							<h1>Elements Page</h1>
-							<p>Ipsum dolor lorem feugiat magna neque egestas augue eu vulpu magna erat. Aliquam erat volutpat. Nam dui mi tincidunt.</p>
+							<h1>Magicians</h1>
+							<p>Coins, cards, ropes, bands, minds -- what </p>
 						</header>
 						<div class="inner alt">
 							<div class="content">
-								<div class="row gtr-200">
-									<div class="col-6 col-12-medium" id="artists-section-a">
-										<!-- ARTIST LIST A HERE -->
+								<div class="row gtr-200" id="artistsSection">
+									<div class="col-6 col-12-medium" id="artist-column-one">
+										<!-- LIST OF ARTISTS -->										
 									</div>
-									<div class="col-6 col-12-medium" id="artists-section-b">
-										<!-- ARTIST LIST B HERE -->
-
+									<div class="col-6 col-12-medium" id="artist-column-two">
+										<!-- LIST OF ARTISTS -->
 									</div>
 								</div>
 
@@ -117,4 +119,6 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+
+<script src="../artistfetcher.js" defer></script>
 </html>
