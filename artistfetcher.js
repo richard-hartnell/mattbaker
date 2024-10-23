@@ -27,6 +27,7 @@ function addArtist(artist, side, column) {
 }
 
 function fetchArtistSheet(url) {
+    let pageTitle = document.title.toLowerCase();
     fetch(url)
     .then(response => response.text())
     .then(data => {
@@ -35,7 +36,10 @@ function fetchArtistSheet(url) {
                 artists = results.data;
                 let column;
                 for (let artist of artists) {
-                    if (artist[0] != "ARTIST") {
+                    if (!pageTitle.includes(artist[2].toLowerCase())) {
+                        console.log('no match');
+                    }
+                    else if (artist[0] != "ARTIST") {
                         if (counter[1] >= counter[0]) {
                             column = 'left';
                             if (counter[0] % 2 != 0) {
@@ -55,11 +59,7 @@ function fetchArtistSheet(url) {
                                 counter[1]++;
                             }
                         }
-                        if (artist) {                            
-                            // [7] && artist[7].trim() === 'TRUE'
-                            // add coniditional here for category check if in a subcat
-                            addArtist(artist, side, column);
-                        }
+                        addArtist(artist, side, column);
                     }
                 }
 
@@ -81,6 +81,3 @@ function fetchArtistSheet(url) {
 }
 
 fetchArtistSheet(url);
-
-// artist-column-one
-// artist-column-two
