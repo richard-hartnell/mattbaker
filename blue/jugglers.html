@@ -48,20 +48,25 @@
 						</header>
 
 						<!-- HIDDEN DROPDOWN SECTION -->
-						<div id="dropdown" style="color: black">
+						<div id="dropdown" style="color: black; height: 0px; overflow: hidden">
 							<div class="content">
-								<div class="row gtr-200" id="artistsSection">
-									<div class="col-6 col-12-medium" id="artist-column-one">
-										<img src="./images/pic01.jpg">										
+								<div class="row gtr-200" id="dropdown-inner">
+									<!-- <div class="col-6 col-12-medium" id="artist-column-one">
+										<img id="dropdownArtistImage" src="./images/pic01.jpg">
+										
 									</div>
 									<div class="col-6 col-12-medium" id="artist-column-two">
-										<h1>H1</h1>
-										<p>p p p p p p p p p</p>
-									</div>
+										<h1>Loading...</h1>
+										<p>test</p>
+									</div> -->
+									<img id="dropdownArtistImage" src="./images/pic01.jpg">
+									<h1>Loading...</h1><br>
+									<p>test</p>
 								</div>
 							</div>
 						</div>
-						
+							
+
 						<div class="inner alt">
 							<div class="content">
 								<div class="row gtr-200" id="artistsSection">
@@ -136,5 +141,6 @@
 
 	</body>
 
-<script src="../artistfetcher.js" defer></script>
+	<script src="../artistfetcher.js" defer></script>
+	<script src="../dropdown.js" defer></script>
 </html>

@@ -14,10 +14,10 @@ function addArtist(artist, side, column) {
     let artistImage = artist[3];
     let altText = artist[4];
     let artistTemplate = `
-        <div class="artist">
-            <h4>${artistName}</h4>
+        <a href="#" onclick="dropIt('${artistName}'); return false;"><div class="artist">
+            <h4 id="artistName">${artistName}</h4>
             <p><span class="image ${side}"><img src="../images/${artistImage}" alt="${altText}" /></span>${artistByline}</p><br><br>
-        </div>
+        </div></a>
     `;
     if (column == 'left') {
         artistsLeft.push(artistTemplate)
