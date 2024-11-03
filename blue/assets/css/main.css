@@ -5184,3 +5184,36 @@ input, select, textarea {
 	/* height: 15em; */
 	/* width: auto; */
 }
+
+#dropdown {
+	color: black;
+	background-color: beige;
+	margin: 0 auto;
+	overflow: scroll;
+	width: 80%;
+	line-height: 1;
+}
+
+#dropdown-inner {
+	/* justify-content: center; */
+	margin: 0 auto;
+}
+
+#dropdown h1 {
+	text-transform: uppercase;
+}
+
+#dropdown h1, h2, p {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#dropdown img {
+	height: 40vh;
+	width: auto;
+	margin: 0 auto;
+}
+
+#artistDropdownInfo {
+	max-width: 50em;
+}
