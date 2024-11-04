@@ -5201,6 +5201,12 @@ input, select, textarea {
 
 #dropdown h1 {
 	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 5vw;
+}
+
+#dropdown h2 {
+	font-size: 4vw;
 }
 
 #dropdown h1, h2, p {
@@ -5209,7 +5215,7 @@ input, select, textarea {
 }
 
 #dropdown img {
-	height: 40vh;
+	height: 30vh;
 	width: auto;
 	margin: 0 auto;
 }
