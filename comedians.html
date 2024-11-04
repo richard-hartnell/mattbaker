@@ -14,6 +14,7 @@
 		<meta http-equiv="Pragma" content="no-cache">
 
 	</head>
+	
 	<body class="is-preload">
 
 			<div id="wrapper">
@@ -46,20 +47,28 @@
 							<p>Jokesters, satirists, teases, humorists, and otherwise funny people</p>
 						</header>
 
-				<!-- HIDDEN DROPDOWN SECTION -->
-				<div id="dropdown" style="color: black">
-					<div class="content">
-						<div class="row gtr-200" id="artistsSection">
-							<div class="col-6 col-12-medium" id="artist-column-one">
-								<img src="./images/pic01.jpg">										
-							</div>
-							<div class="col-6 col-12-medium" id="artist-column-two">
-								<h1>Loading...</h1>
-								<p></p>
+						<!-- HIDDEN DROPDOWN SECTION -->
+						<div id="dropdown">
+							<a href="#" onclick="collapseIt(); return false;"><div id="collapse-bar">
+								COLLAPSE
+							</div></a>
+							<div class="content">
+								<div id="dropdown-inner">
+									
+									<div class="row col-6 col-12" style="left: 0px; margin: 0; align-items: normal">
+										<div><img id="dropdownArtistImage" src="./images/pic01.jpg"></div>
+										<div id="artistDropdownInfo">
+											<h1>Artist Name</h1>
+											<h2>Artist Byline</h2><br>
+											<p>Lorem ipsum<br><br></p>
+											<p>Paragraph 2<br><br></p>										
+											<p>Paragraph 3<br><br></p>
+											<p>Paragraph 4</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
 
 						<div class="inner alt">
 							<div class="content">

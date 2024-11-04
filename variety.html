@@ -48,33 +48,41 @@
 						</header>
 
 						<!-- HIDDEN DROPDOWN SECTION -->
-						<div id="dropdown" style="color: black">
+						<div id="dropdown">
+							<a href="#" onclick="collapseIt(); return false;"><div id="collapse-bar">
+								COLLAPSE
+							</div></a>
 							<div class="content">
-								<div class="row gtr-200" id="artistsSection">
-									<div class="col-6 col-12-medium" id="artist-column-one">
-										<img src="./images/pic01.jpg">										
-									</div>
-									<div class="col-6 col-12-medium" id="artist-column-two">
-										<h1>H1</h1>
-										<p>p p p p p p p p p</p>
+								<div id="dropdown-inner">
+									
+									<div class="row col-6 col-12" style="left: 0px; margin: 0; align-items: normal">
+										<div><img id="dropdownArtistImage" src="./images/pic01.jpg"></div>
+										<div id="artistDropdownInfo">
+											<h1>Artist Name</h1>
+											<h2>Artist Byline</h2><br>
+											<p>Lorem ipsum<br><br></p>
+											<p>Paragraph 2<br><br></p>										
+											<p>Paragraph 3<br><br></p>
+											<p>Paragraph 4</p>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="inner alt">
-							<div class="content">
-								<div class="row gtr-200" id="artistsSection">
-									<div class="col-6 col-12-medium" id="artist-column-one">
-										<!-- LIST OF ARTISTS -->										
-									</div>
-									<div class="col-6 col-12-medium" id="artist-column-two">
-										<!-- LIST OF ARTISTS -->
-									</div>
+					<div class="inner alt">
+						<div class="content">
+							<div class="row gtr-200" id="artistsSection">
+								<div class="col-6 col-12-medium" id="artist-column-one">
+									<!-- LIST OF ARTISTS -->										
 								</div>
-
+								<div class="col-6 col-12-medium" id="artist-column-two">
+									<!-- LIST OF ARTISTS -->
+								</div>
 							</div>
+
 						</div>
+					</div>
 					</section>
 
 				<!-- Footer -->
@@ -136,6 +144,6 @@
 
 	</body>
 
-	<script src="../artistfetcher.js" defer></script>
-	<script src="../dropdown.js" defer></script>
+	<script src="assets/js/artistfetcher.js" defer></script>
+	<script src="assets/js/dropdown.js" defer></script>
 </html>

@@ -5223,3 +5223,12 @@ input, select, textarea {
 #artistDropdownInfo {
 	max-width: 50em;
 }
+
+#collapse-bar {
+	width: 100%;
+	background-color: teal;
+	color: white;
+	padding: 10px 0;
+	text-align: center;
+	font-weight: bold;
+}

@@ -20,15 +20,18 @@ innerTemplate = `
 
 function dropIt(artist) {
     inside.innerHTML = createDropdownHTML(artist);
+    if (dropdown.style.height == '0px') {
+        let dropdownArtist = artists.find(artists => artists[0] == artist);
+        dropdown.style.transition = '0.75s';
+        dropdown.style.height = '75vh';
+        // dropdown.style.bottom = '30%';
+        dropdown.style.bottom = '-98%';
+    }
+}
+
+function collapseIt() {
     if (dropdown.style.height != '0px') {
         dropdown.style.height = '0px';
-        return false;
-    } else if (dropdown.style.height == '0px') {
-    let dropdownArtist = artists.find(artists => artists[0] == artist);
-    dropdown.style.transition = '0.75s';
-    dropdown.style.height = '75vh';
-    // dropdown.style.bottom = '30%';
-    dropdown.style.bottom = '-98%';
     }
 }
 
@@ -66,20 +69,4 @@ function createDropdownHTML(artist) {
     </div>    
     `
     return innerCode;
-}
-
-function pullTopBar() {
-    console.log('pullTopBar');
-    if (mainText.innerHTML == defaultText) {
-        // console.log('defaultText');
-    }
-    dropdown.style.transition = '0.75s';
-    dropdown.style.height = '75%';
-    dropdown.style.bottom = '30%';
-    dropdown.style.bottom = '-98%';
-    surprise.style.transition = '0.75s';
-    surprise.style.bottom = '30%';
-    surprisetop.style.height = '100%';
-    surprise.style.position = 'fixed';
-    // mainText.innerHTML = "";
 }
