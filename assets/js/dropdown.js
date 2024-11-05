@@ -2,23 +2,8 @@ const dropdown = document.getElementById("dropdown");
 const inside = document.getElementById("dropdown-inner");
 dropdown.style.height = '0px';
 
-innerTemplate = `
-<div class="withdraw-bar" style="width: 100%; background-color: blue; color: white; 
-<div class="row col-6 col-12" style="left: 0px; margin: 0; align-items: normal">
-    <div><img id="dropdownArtistImage" src="./images/pic01.jpg"></div>
-    <div id="artistDropdownInfo">
-        <h1>Artist Name</h1>
-        <h2>Artist Byline<br></h2><br>
-        <p>Lorem ipsum<br><br></p>
-        <p>Paragraph 2<br><br></p>										
-        <p>Paragraph 3<br><br></p>
-        <p>Paragraph 4</p>
-    </div>
-    <div>VIDEO HERE</a>
-</div>    
-`
-
 function dropIt(artist) {
+    window.scrollTo(0, 0);
     inside.innerHTML = createDropdownHTML(artist);
     if (dropdown.style.height == '0px') {
         let dropdownArtist = artists.find(artists => artists[0] == artist);

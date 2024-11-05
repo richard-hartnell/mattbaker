@@ -5171,7 +5171,10 @@ input, select, textarea {
 .content .artist {
 	 text-align: left;
 	 padding-bottom: 4em;
-	 background: beige;
+	 background-repeat: no-repeat;
+	 background-size: contain;
+	 background-position: center;
+	 color: white;
 	 height: 20em;
 	 padding-left: 1em;
 	 padding-right: 1em;
@@ -5179,10 +5182,15 @@ input, select, textarea {
 	 margin: 1em;
 }
 
-.content .artist img {
-	position: relative;
-	/* height: 15em; */
-	/* width: auto; */
+.artist h4 {
+	font-size: 2em;
+	text-transform: uppercase;
+	color: seashell;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.artist p {
+	font-size: 1.5em;
 }
 
 #dropdown {
