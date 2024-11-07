@@ -13,7 +13,7 @@ function addArtist(artist, side, column) {
     let artistBio;
     let artistImage = artist[3];
     let altText = artist[4];
-    let artistTemplate = `<a href="#nav" onclick="dropIt('${artistName}'); return false;"><div class="artist" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(assets/images/${artistImage}); background-size: cover"><h4 id="artistName">${artistName}</h4><span class="image ${side}"></span><p>${artistByline}</p><br><br></div></a>`;
+    let artistTemplate = `<a href="#nav" onclick="dropIt('${artistName}'); return false;"><div class="artist" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(assets/images/${artistImage}); background-size: cover"><h4 id="artistName">${artistName}</h4><span class="image ${side}"></span><p class="byline">${artistByline}</p><br><br></div></a>`;
     if (column == 'left') {
         artistsLeft.push(artistTemplate)
     } else {
@@ -57,13 +57,15 @@ function fetchArtistSheet(url) {
                         addArtist(artist, side, column);
                     }
                 }
+                let artistsLeftStrung = artistsLeft.join('');
+                let artistsRightStrung = artistsRight.join('');
 
                 let artistsSection = `
                     <div class="col-6 col-12-medium"  id="artist-column-one">
-                        ${artistsLeft}
+                        ${artistsLeftStrung}
                     </div>
                     <div class="col-6 col-12-medium" id="artist-column-two">
-                        ${artistsRight}
+                        ${artistsRightStrung}
                     </div>
                 </div>
                 `;
