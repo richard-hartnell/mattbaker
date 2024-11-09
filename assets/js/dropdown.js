@@ -9,7 +9,6 @@ function dropIt(artist) {
         let dropdownArtist = artists.find(artists => artists[0] == artist);
         dropdown.style.transition = '0.75s';
         dropdown.style.height = '75vh';
-        // dropdown.style.bottom = '30%';
         dropdown.style.bottom = '-98%';
     }
 }
@@ -24,8 +23,11 @@ function createBio(artist) {
     let dropdownArtist = artists.find(artists => artists[0] == artist);
     let counter = 6;
     let bio = "";
+    let artistVideo = dropdownArtist[5];
+    let videoLink = `<a href="${artistVideo}" target="_blank"><button class="button primary">Watch Video</button></a>`;
     while (true) {
-        if (dropdownArtist[counter] == undefined) {
+        if (!dropdownArtist[counter]) {
+            bio += videoLink;
             return bio;
         }
         let section = dropdownArtist[counter];
@@ -49,7 +51,7 @@ function createDropdownHTML(artist) {
         <div id="artistDropdownInfo">
             <h1>${artistName}</h1>
             <h2>${artistByline}</h2><br>
-            ${artistBio}
+            <div class="artist-bio">${artistBio}</div>
         </div>
     </div>    
     `

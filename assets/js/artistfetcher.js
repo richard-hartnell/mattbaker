@@ -10,10 +10,10 @@ function addArtist(artist, side, column) {
     let artistName = artist[0];
     let artistByline = artist[1];
     let artistCategory = artist[2];
-    let artistBio;
     let artistImage = artist[3];
     let altText = artist[4];
-    let artistTemplate = `<a href="#nav" onclick="dropIt('${artistName}'); return false;"><div class="artist" style="background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(assets/images/${artistImage}); background-size: cover"><h4 id="artistName">${artistName}</h4><span class="image ${side}"></span><p class="byline">${artistByline}</p><br><br></div></a>`;
+    let artistVideo = artist[5];
+    let artistTemplate = `<a href="#nav" onclick="dropIt('${artistName}'); return false;"><div class="artist" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(assets/images/${artistImage}); background-size: cover"><h4 id="artistName">${artistName}</h4><span class="image ${side}"></span><p class="byline">${artistByline}</p><br><br></div></a>`;
     if (column == 'left') {
         artistsLeft.push(artistTemplate)
     } else {

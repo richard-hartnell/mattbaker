@@ -5197,35 +5197,46 @@ input, select, textarea {
 	color: black;
 	background-color: beige;
 	margin: 0 auto;
-	overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	width: 80%;
 	line-height: 1;
+	scrollbar-width: thin;
+	padding: 0;
 }
 
 #dropdown-inner {
 	/* justify-content: center; */
+	padding: 0;
 	margin: 0 auto;
 }
 
 #dropdown h1 {
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 5vw;
+	font-size: clamp(2em, 5vw, 4em);
+	color: black !important;
 }
 
 #dropdown h2 {
-	font-size: 4vw;
+	font-size: clamp(1.5em, 5vw, 3em);
+	color: black !important;;
 }
 
 #dropdown h1, h2, p {
+	/* color: black !important; */
 	width: 100%;
 	margin: 0 auto;
 }
 
 #dropdown img {
-	height: 30vh;
-	width: auto;
+	/* min-width: 1000px; */
 	margin: 0 auto;
+}
+
+.artist-bio {
+	font-size: clamp(1.5em, 4vw, 1.75em);
+	line-height: 1.3em;
 }
 
 #artistDropdownInfo {
