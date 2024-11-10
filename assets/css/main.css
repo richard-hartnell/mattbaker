@@ -3465,20 +3465,20 @@ input, select, textarea {
 	#banner {
 		position: relative;
 		cursor: default;
-		background-image: url("../../../apple-mouth-fork.webp");
+		background-image: url("../images/apple-mouth-fork.webp");
 		background-position: center;
 		background-size: cover;
 	}
 
 		#banner:after {
-			-moz-transition: opacity 3s ease-in-out;
-			-webkit-transition: opacity 3s ease-in-out;
-			-ms-transition: opacity 3s ease-in-out;
-			transition: opacity 3s ease-in-out;
+			-moz-transition: opacity 2s ease-in-out;
+			-webkit-transition: opacity 2s ease-in-out;
+			-ms-transition: opacity 2s ease-in-out;
+			transition: opacity 2s ease-in-out;
 			-moz-transition-delay: 0.5s;
 			-webkit-transition-delay: 0.5s;
 			-ms-transition-delay: 0.5s;
-			transition-delay: 0.5s;
+			transition-delay: 0.25s;
 			content: '';
 			position: absolute;
 			top: 0;
