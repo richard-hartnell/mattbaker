@@ -365,11 +365,11 @@ input, select, textarea {
 	}
 
 	a {
-		color: #3b3b3b;
+		color: seashell;
 	}
 
 	strong, b {
-		color: #3b3b3b;
+		color: #ddd;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -3212,10 +3212,13 @@ input, select, textarea {
 		width: 100%;
 		height: 3.25rem;
 		line-height: 3.25rem;
-		background-color: #ffffff;
+		background-color: #222;
 		box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.125);
 		cursor: default;
 		z-index: 10000;
+		/* text-shadow: 1px 1px #; */
+		font-weight: 1000;
+		font-size: 1.2em;
 	}
 
 		#header a {
@@ -3237,6 +3240,7 @@ input, select, textarea {
 		#header > nav {
 			position: absolute;
 			right: 0;
+			
 		}
 
 			#header > nav > ul {
@@ -3482,7 +3486,7 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background-color: #f7f7f7;
-			opacity: 0.5;
+			opacity: 0.4;
 		}
 
 		#banner video {
@@ -4885,8 +4889,8 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		padding: 6rem 0 4rem 0 ;
-		background-color: #ffffff;
+		padding: 2rem 0 2rem 0 ;
+		background-color: #111;
 	}
 
 		#footer > .inner {
@@ -5209,6 +5213,7 @@ input, select, textarea {
 	width: 100%;
 	padding: 0;
 	margin: 0 auto;
+	text-align: center;
 }
 
 #dropdown h1 {
@@ -5226,18 +5231,22 @@ input, select, textarea {
 #dropdown h1, h2, p {
 	/* color: black !important; */
 	width: 100%;
-	margin: 0 auto;
 }
 
-#dropdown #img-wrapper {
-	display: none;
-	width: 100%;
-	margin: 0 auto;
+#dropdown-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(50%, 80%, 1000px);
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 #dropdown img {
-	max-width: 100%;
-	margin: 0 auto;
+    /* min-width: 100%; */
+    max-height: 40vh;
+	width: auto;
+    display: block;
 }
 
 .artist-bio {

@@ -3,7 +3,7 @@ const inside = document.getElementById("dropdown-inner");
 dropdown.style.height = '0px';
 
 function dropIt(artist) {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     dropdown.scrollTo(0,0);
     inside.innerHTML = createDropdownHTML(artist);
     if (dropdown.style.height == '0px') {
@@ -47,9 +47,11 @@ function createDropdownHTML(artist) {
     let artistVideo = dropdownArtist[5];
     let artistBio = createBio(artist);
     let innerCode = `
-    <div style="left: 0px; margin: 0; align-items: normal">
-        <div><img class="dropdownArtistImage" src="assets/images/${artistImage}" alt="${altText}"></div>
-        <div id="artistDropdownInfo">
+    <div>
+        <div id="dropdown-img-wrapper">
+            <img class="dropdownArtistImage" src="assets/images/${artistImage}" alt="${altText}">
+        </div>
+        <div id="artistDropdownInfo" style="margin: 0 auto">
             <h1>${artistName}</h1>
             <h2>${artistByline}</h2><br>
             <div class="artist-bio">${artistBio}</div>
@@ -58,3 +60,14 @@ function createDropdownHTML(artist) {
     `
     return innerCode;
 }
+
+dropdown.addEventListener('wheel', (event) => {
+    const maxScrollTop = scrollableDiv.scrollHeight - scrollableDiv.clientHeight;
+    const currentScrollTop = scrollableDiv.scrollTop;
+
+    // Check if the user is at the bottom and trying to scroll down further
+    if (currentScrollTop >= maxScrollTop && event.deltaY > 0) {
+        event.preventDefault();
+        window.scrollBy(0, event.deltaY); // Scroll the page instead
+    }
+});
