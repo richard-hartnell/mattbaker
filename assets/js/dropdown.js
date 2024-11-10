@@ -4,6 +4,7 @@ dropdown.style.height = '0px';
 
 function dropIt(artist) {
     window.scrollTo(0, 0);
+    dropdown.scrollTo(0,0);
     inside.innerHTML = createDropdownHTML(artist);
     if (dropdown.style.height == '0px') {
         let dropdownArtist = artists.find(artists => artists[0] == artist);
@@ -24,7 +25,7 @@ function createBio(artist) {
     let counter = 6;
     let bio = "";
     let artistVideo = dropdownArtist[5];
-    let videoLink = `<a href="${artistVideo}" target="_blank"><button class="button primary">Watch Video</button></a>`;
+    let videoLink = `<a href="${artistVideo}" target="_blank"><button class="button primary" style="margin: 5em auto;">Watch Video</button></a>`;
     while (true) {
         if (!dropdownArtist[counter]) {
             bio += videoLink;
@@ -46,7 +47,7 @@ function createDropdownHTML(artist) {
     let artistVideo = dropdownArtist[5];
     let artistBio = createBio(artist);
     let innerCode = `
-    <div class="row col-6 col-12" style="left: 0px; margin: 0; align-items: normal">
+    <div style="left: 0px; margin: 0; align-items: normal">
         <div><img class="dropdownArtistImage" src="assets/images/${artistImage}" alt="${altText}"></div>
         <div id="artistDropdownInfo">
             <h1>${artistName}</h1>

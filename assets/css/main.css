@@ -5206,7 +5206,7 @@ input, select, textarea {
 }
 
 #dropdown-inner {
-	/* justify-content: center; */
+	width: 100%;
 	padding: 0;
 	margin: 0 auto;
 }
@@ -5220,7 +5220,7 @@ input, select, textarea {
 
 #dropdown h2 {
 	font-size: clamp(1.5em, 5vw, 3em);
-	color: black !important;;
+	color: black !important;
 }
 
 #dropdown h1, h2, p {
@@ -5229,8 +5229,14 @@ input, select, textarea {
 	margin: 0 auto;
 }
 
+#dropdown #img-wrapper {
+	display: none;
+	width: 100%;
+	margin: 0 auto;
+}
+
 #dropdown img {
-	/* min-width: 1000px; */
+	max-width: 100%;
 	margin: 0 auto;
 }
 
